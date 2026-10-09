@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Bakehouse Menu — Breadly Bakery | Artisanal Bakehouse Demo</title>
+  <meta name="description" content="Explore today's freshly baked rustic sourdough loaves, laminated French viennoiserie, morning pastries, and handcrafted celebration cakes.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Breadly<span>.</span><span class="logo-tag">Artisan Bakehouse</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link active">Daily Menu</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="gallery.html" class="nav-link">Bakehouse</a>
+        <a href="order.html" class="nav-link">Custom Bakes</a>
+        <a href="contact.html" class="nav-link">Visit Us</a>
+        <a href="order.html" class="btn btn-primary nav-action" style="padding: 0.55rem 1.25rem; font-size: 0.8rem;">Pre-Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Mini -->
+  <section class="hero hero-mini">
+    <img 
+      src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1920&q=80&auto=format&fit=crop" 
+      alt="Freshly baked golden French croissants" 
+      class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow eyebrow-pill eyebrow-light">Baked Fresh Daily at 6:30 AM</div>
+      <h1 class="hero-title">The Daily Bakehouse Menu</h1>
+      <p class="hero-subtitle" style="margin-bottom: 0;">
+        Crafted in small batches with stone-ground heritage grains, Normandy butter, and wild sourdough cultures.
+      </p>
+    </div>
+  </section>
+
+  <!-- Special of the Day Banner -->
+  <div style="background-color: #1a120c; color: #fdfaf6; padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span style="background: var(--color-accent); color: #fff; padding: 0.3rem 0.8rem; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Today's Hearth Special</span>
+        <span style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600;">Cardamom Morning Knot & Burnt Honey Croissant</span>
+      </div>
+      <a href="order.html" class="btn btn-white" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Reserve Today's Special &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Menu Section with Filters -->
+  <section class="py-large bg-canvas">
+    <div class="container">
+      
+      <!-- Category Filter Tabs -->
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">All Bakes (9)</button>
+        <button class="filter-btn" data-filter="breads">Wild Sourdough</button>
+        <button class="filter-btn" data-filter="pastries">Laminated Pastries</button>
+        <button class="filter-btn" data-filter="cakes">Patisserie & Cakes</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid-3">
+
+        <!-- BREADS -->
+        <div class="card menu-item" data-category="breads">
+          <div class="card-tag">Signature</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80&auto=format&fit=crop" alt="48-Hour Heritage Sourdough Loaf" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">48-Hr Country Sourdough</h3>
+            <p class="card-desc">100% stone-ground Khapli wheat. Slow cold ferment, dark caramelized crust, open custardy crumb.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 260</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-item" data-category="breads">
+          <div class="card-tag">Soft Crumb</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=600&q=80&auto=format&fit=crop" alt="Pull-Apart Brioche Dinner Rolls" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Brioche Dinner Rolls (Pack of 6)</h3>
+            <p class="card-desc">Tender golden pull-apart rolls brushed with cultured butter and sea salt flakes.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 180</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-item" data-category="breads">
+          <div class="card-tag">Nutrient Dense</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80&auto=format&fit=crop" alt="Multigrain Seeded Sourdough Loaf" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Seven-Seed Rye & Sourdough</h3>
+            <p class="card-desc">Toasted flax, sesame, sunflower, and pumpkin seeds packed into a dark rye sourdough loaf.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 290</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASTRIES -->
+        <div class="card menu-item" data-category="pastries">
+          <div class="card-tag">27 Layers</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8317b11df?w=600&q=80&auto=format&fit=crop" alt="French Normandy Butter Croissant" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Classic Butter Croissant</h3>
+            <p class="card-desc">Laminated with 84% European butter. Crisp paper-thin outer shell with an airy honeycomb center.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 160</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-item" data-category="pastries">
+          <div class="card-tag">Aromatic</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&q=80&auto=format&fit=crop" alt="Cinnamon Morning Bun" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Ceylon Cinnamon Bun</h3>
+            <p class="card-desc">Soft brioche swirl with Sri Lankan cinnamon and muscovado sugar, topped with vanilla cream cheese.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 180</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-item" data-category="pastries">
+          <div class="card-tag">Seasonal</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=80&auto=format&fit=crop" alt="Wild Berry Cream Danish" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Berry Frangipane Danish</h3>
+            <p class="card-desc">Flaky laminated cup filled with roasted almond frangipane and fresh tart berry reduction.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 220</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAKES & PATISSERIE -->
+        <div class="card menu-item" data-category="cakes">
+          <div class="card-tag">Decadent</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80&auto=format&fit=crop" alt="Valrhona Dark Chocolate Ganache Cake" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Valrhona Truffle Cake</h3>
+            <p class="card-desc">Single-origin 70% dark chocolate sponge with whipped silky ganache and espresso caramel drip.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 290</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-item" data-category="cakes">
+          <div class="card-tag">Artisanal</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80&auto=format&fit=crop" alt="Parisian Almond Macarons" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Parisian Macarons (Box of 4)</h3>
+            <p class="card-desc">Salted caramel, roasted pistachio, dark chocolate raspberry, and Madagascar vanilla bean.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 340</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card menu-item" data-category="cakes">
+          <div class="card-tag">Celebration</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&q=80&auto=format&fit=crop" alt="Seasonal Flower Celebration Cake" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Botanical Vanilla Sponge</h3>
+            <p class="card-desc">Light almond chiffon cake layered with fresh passionfruit curd and edible organic flora.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 320</div>
+              <button class="card-action-btn" type="button">Add to Reserve</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom Cake Order Callout -->
+      <div style="margin-top: 4rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 3rem; text-align: center;">
+        <div class="eyebrow eyebrow-pill">Custom Creations</div>
+        <h2 style="margin-bottom: 1rem;">Planning a Birthday, Wedding, or Gathering?</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem;">
+          We craft custom celebration cakes, sourdough grazing platters, and corporate morning pastry boxes. Give us 48 hours notice to prepare something unforgettable.
+        </p>
+        <a href="order.html" class="btn btn-primary">Start a Custom Cake Order &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Breadly<span>.</span></div>
+          <p style="color: #b3a497; font-size: 0.92rem; line-height: 1.6;">
+            Baked with love, served with warmth. Small-batch sourdough, hand-laminated viennoiserie, and honest morning coffee in the heart of Artisanal Bakehouse Demo.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Daily Menu</a></li>
+            <li><a href="about.html">Our Craft & Founders</a></li>
+            <li><a href="gallery.html">Bakehouse Gallery</a></li>
+            <li><a href="order.html">Custom Celebration Bakes</a></li>
+            <li><a href="contact.html">Store Location & Timings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Bakehouse Timings</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li><strong style="color: #fff;">Tue – Fri:</strong> 7:00 AM – 8:00 PM</li>
+            <li><strong style="color: #fff;">Sat – Sun:</strong> 7:00 AM – 9:00 PM</li>
+            <li><strong style="color: #c45b24;">Monday:</strong> Closed (Culture rest)</li>
+            <li style="margin-top: 0.5rem; color: #d49a37;">Fresh Croissants out by 7:15 AM</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find Our Hearth</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li>124 Artisan Way, Suite 400</li>
+            <li>Central Park Arts District</li>
+            <li>Metro District, Suite 400</li>
+            <li style="margin-top: 0.5rem;"><a href="tel:+15550192834" style="color: #fff; font-weight: 600;">+1 (555) 019-2834</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2025 Breadly Bakery • Free Open-Source Demo Showcase • 100% Copyright-Free Media</div>
+        <div>Photography via Unsplash (Free Royalty-Free License) • Demo Showcase</div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 3.67C16.58 3.67 20.28 7.37 20.28 11.92C20.28 16.46 16.58 20.17 12.05 20.17C10.51 20.17 9.04 19.75 7.77 18.99L7.46 18.81L4.35 19.63L5.19 16.6L4.99 16.29C4.16 14.97 3.72 13.47 3.72 11.91C3.72 7.37 7.42 3.67 12.05 3.67Z"/></svg>
+  </a>
+
+</body>
+</html>

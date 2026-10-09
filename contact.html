@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Our Bakehouse & Contact — Breadly Bakery | Artisanal Bakehouse Demo</title>
+  <meta name="description" content="Find Breadly Bakery at 42 Baker Street, our neighborhood 100ft Road, Metro District. Timings, phone number, WhatsApp inquiry, and Google Maps directions.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Breadly<span>.</span><span class="logo-tag">Artisan Bakehouse</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Daily Menu</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="gallery.html" class="nav-link">Bakehouse</a>
+        <a href="order.html" class="nav-link">Custom Bakes</a>
+        <a href="contact.html" class="nav-link active">Visit Us</a>
+        <a href="order.html" class="btn btn-primary nav-action" style="padding: 0.55rem 1.25rem; font-size: 0.8rem;">Pre-Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Mini -->
+  <section class="hero hero-mini">
+    <img 
+      src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1920&q=80&auto=format&fit=crop" 
+      alt="Freshly baked sourdough and flour dusted marble counter" 
+      class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow eyebrow-pill eyebrow-light">our neighborhood 100ft Road</div>
+      <h1 class="hero-title">Come Find Our Hearth</h1>
+      <p class="hero-subtitle" style="margin-bottom: 0;">
+        Follow the scent of warm butter and caramelized grain. We are open from 7:00 AM every Tuesday to Sunday.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact & Info Split -->
+  <section class="py-large bg-canvas">
+    <div class="container split-layout" style="align-items: start;">
+      
+      <!-- Contact Form -->
+      <div class="form-wrapper">
+        <div class="eyebrow eyebrow-pill">Send Us A Note</div>
+        <h2 style="margin-bottom: 0.5rem;">We’d Love To Hear From You</h2>
+        <p style="margin-bottom: 2rem;">For catering, corporate gifting, wholesale bread supply, or friendly greetings.</p>
+
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cName">Your Name *</label>
+              <input type="text" id="cName" class="form-control" placeholder="Arun Kumar" required>
+              <div class="form-error">Please enter your name</div>
+            </div>
+            <div class="form-group">
+              <label for="cPhone">Phone Number</label>
+              <input type="tel" id="cPhone" class="form-control" placeholder="+1 (555) 019-2834">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cEmail">Email Address *</label>
+            <input type="email" id="cEmail" class="form-control" placeholder="arun@domain.com" required>
+            <div class="form-error">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="cSubject">Inquiry Subject</label>
+            <select id="cSubject" class="form-control">
+              <option value="general">General Question</option>
+              <option value="catering">Corporate Breakfast & Catering</option>
+              <option value="wholesale">Wholesale Sourdough Partnership</option>
+              <option value="press">Press & Media</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cMessage">Your Message *</label>
+            <textarea id="cMessage" class="form-control" rows="5" placeholder="How can our bakery help you?" required></textarea>
+            <div class="form-error">Please write a message</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 0.95rem;">
+            Send Message &rarr;
+          </button>
+
+          <div class="form-success">
+            Thank you! Your message has been sent to Arjun and Meera. We will respond within 24 hours.
+          </div>
+        </form>
+      </div>
+
+      <!-- Info & Timings Panel -->
+      <div>
+        <div style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: clamp(1.75rem, 3.5vw, 2.5rem); box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
+          <div class="eyebrow eyebrow-pill">Store Information</div>
+          <h3 style="margin-bottom: 1.5rem;">Bakehouse & Counter</h3>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: flex; gap: 1rem;">
+              <div style="font-size: 1.35rem;">📍</div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Physical Address</h4>
+                <p style="font-size: 0.9rem; color: var(--color-muted); margin-bottom: 0;">
+                  124 Artisan Way, Suite 400,<br>
+                  Central Park Arts District,<br>
+                  Metro District, Suite 400
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem;">
+              <div style="font-size: 1.35rem;">🕒</div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Weekly Oven Schedule</h4>
+                <p style="font-size: 0.9rem; color: var(--color-muted); margin-bottom: 0.2rem;">
+                  <strong>Tuesday – Friday:</strong> 7:00 AM – 8:00 PM<br>
+                  <strong>Saturday – Sunday:</strong> 7:00 AM – 9:00 PM<br>
+                  <span style="color: var(--color-accent); font-weight: 600;">Monday:</span> Closed (Starter resting)
+                </p>
+                <div style="font-size: 0.8rem; color: var(--color-accent-warm); font-weight: 600; margin-top: 0.4rem;">
+                  ✦ Morning Butter Croissants out of the oven by 7:15 AM
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem;">
+              <div style="font-size: 1.35rem;">📞</div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Direct Bakery Phone</h4>
+                <p style="font-size: 0.9rem; color: var(--color-muted); margin-bottom: 0;">
+                  <a href="tel:+15550192834" style="color: var(--color-accent); font-weight: 700;">+1 (555) 019-2834</a><br>
+                  <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" target="_blank" style="color: #25D366; font-weight: 600;">Chat with Baker on WhatsApp &rarr;</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Styled Map Card -->
+        <div style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+          <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 600; font-size: 0.9rem;">Interactive Map</span>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-size: 0.82rem; font-weight: 600;">Open in Google Maps &rarr;</a>
+          </div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.503463990833!2d77.6338573177699!3d12.97782352840733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a695e2637b%3A0x6a0a030589139556!2sour neighborhood%2C%20Metro District%2C%20Locality!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="260" 
+            style="border:0; display: block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Breadly Bakery Location Map">
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Breadly<span>.</span></div>
+          <p style="color: #b3a497; font-size: 0.92rem; line-height: 1.6;">
+            Baked with love, served with warmth. Small-batch sourdough, hand-laminated viennoiserie, and honest morning coffee in the heart of Artisanal Bakehouse Demo.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Daily Menu</a></li>
+            <li><a href="about.html">Our Craft & Founders</a></li>
+            <li><a href="gallery.html">Bakehouse Gallery</a></li>
+            <li><a href="order.html">Custom Celebration Bakes</a></li>
+            <li><a href="contact.html">Store Location & Timings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Bakehouse Timings</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li><strong style="color: #fff;">Tue – Fri:</strong> 7:00 AM – 8:00 PM</li>
+            <li><strong style="color: #fff;">Sat – Sun:</strong> 7:00 AM – 9:00 PM</li>
+            <li><strong style="color: #c45b24;">Monday:</strong> Closed (Culture rest)</li>
+            <li style="margin-top: 0.5rem; color: #d49a37;">Fresh Croissants out by 7:15 AM</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find Our Hearth</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li>124 Artisan Way, Suite 400</li>
+            <li>Central Park Arts District</li>
+            <li>Metro District, Suite 400</li>
+            <li style="margin-top: 0.5rem;"><a href="tel:+15550192834" style="color: #fff; font-weight: 600;">+1 (555) 019-2834</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2025 Breadly Bakery • Free Open-Source Demo Showcase • 100% Copyright-Free Media</div>
+        <div>Photography via Unsplash (Free Royalty-Free License) • Demo Showcase</div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 3.67C16.58 3.67 20.28 7.37 20.28 11.92C20.28 16.46 16.58 20.17 12.05 20.17C10.51 20.17 9.04 19.75 7.77 18.99L7.46 18.81L4.35 19.63L5.19 16.6L4.99 16.29C4.16 14.97 3.72 13.47 3.72 11.91C3.72 7.37 7.42 3.67 12.05 3.67Z"/></svg>
+  </a>
+
+</body>
+</html>

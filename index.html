@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breadly Bakery — Artisanal Sourdough & Patisserie | Artisanal Bakehouse Demo</title>
+  <meta name="description" content="Artisanal sourdough, flaky French butter croissants, and handcrafted morning bakes in Artisanal Bakehouse Demo. 48-hour wild fermentation, organic heritage flours.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Breadly<span>.</span>
+        <span class="logo-tag">Artisan Bakehouse</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link">Daily Menu</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="gallery.html" class="nav-link">Bakehouse</a>
+        <a href="order.html" class="nav-link">Custom Bakes</a>
+        <a href="contact.html" class="nav-link">Visit Us</a>
+        <a href="order.html" class="btn btn-primary nav-action" style="padding: 0.55rem 1.25rem; font-size: 0.8rem;">Pre-Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img 
+      src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920&q=80&auto=format&fit=crop" 
+      alt="Artisanal blistered sourdough loaf fresh from the hearth" 
+      class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow eyebrow-pill eyebrow-light">
+        <span>✦</span> Handcrafted Small-Batch Boulangerie • Demo Showcase
+      </div>
+      <h1 class="hero-title">Where Pure Grain Meets Honest Fire.</h1>
+      <p class="hero-subtitle">
+        48-hour slow-fermented wild sourdough, hand-laminated French butter croissants, and seasonal tea patisserie. Baked fresh before sunrise, every single morning.
+      </p>
+      <div class="hero-ctas">
+        <a href="menu.html" class="btn btn-primary">Explore Today's Bakes &rarr;</a>
+        <a href="order.html" class="btn btn-ghost-light">Custom Cake & Pre-Orders</a>
+      </div>
+    </div>
+
+    <!-- Live Oven Status Bar -->
+    <div class="hero-live-bar">
+      <div class="container">
+        <div class="live-indicator">
+          <span class="live-dot"></span>
+          <span>Hearth Deck Live • Fresh Batch Cooling</span>
+        </div>
+        <div>
+          <span>Today's Batch: <strong>Heritage Wild Sourdough & Burnt Honey Croissants</strong></span>
+        </div>
+        <div>
+          <span>⭐ 4.9/5 from 500+ Community Reviews</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Ticker -->
+  <div class="marquee-wrapper">
+    <div class="marquee-content">
+      <span>48-Hour Wild Sourdough</span>
+      <span>Hand-Laminated Pain au Chocolat</span>
+      <span>Pistachio Frangipane Danish</span>
+      <span>Ceylon Cinnamon Brioche</span>
+      <span>Organic Heritage Grains</span>
+      <span>Single-Origin Espresso</span>
+      <span>Burnt Honey Morning Buns</span>
+      <span>Valrhona Chocolate Torte</span>
+      <span>48-Hour Wild Sourdough</span>
+      <span>Hand-Laminated Pain au Chocolat</span>
+      <span>Pistachio Frangipane Danish</span>
+      <span>Ceylon Cinnamon Brioche</span>
+    </div>
+  </div>
+
+  <!-- Craft Story Split Section -->
+  <section class="py-large bg-canvas">
+    <div class="container split-layout">
+      <div class="split-img-wrapper reveal">
+        <img 
+          src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=900&q=80&auto=format&fit=crop" 
+          alt="Warm bakery interior with rustic bread baskets" 
+          loading="lazy">
+        <div class="floating-badge">
+          <div class="badge-title">48-Hr Ferment</div>
+          <div class="badge-desc">Zero commercial yeast. Just wild culture, stone-ground grain & time.</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow eyebrow-pill">The Bakehouse Creed</div>
+        <h2>No Shortcuts. No Improvers. Just Flour, Water, Salt & Time.</h2>
+        <p>
+          At Breadly, we wake up at 3:30 AM while our neighborhood is still asleep. What began in 2019 as Meera and Arjun’s quest for authentic crusty bread has grown into a neighborhood hearth where real bread is honored as craft.
+        </p>
+        <p>
+          We mill stone-ground heritage Indian grains alongside imported French flours, slowly developing flavor through natural fermentation that is gentle on your digestion and bursting with complex wheaty depth.
+        </p>
+        
+        <div class="pillars-list">
+          <div class="pillar-item">
+            <div class="pillar-icon">🌾</div>
+            <div class="pillar-content">
+              <h4>Organic Heritage Grains</h4>
+              <p>Locally sourced, stone-milled Khapli (Emmer) wheat rich in nutrients with low glycemic impact.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-icon">🧈</div>
+            <div class="pillar-content">
+              <h4>84% Normandy Butter Lamination</h4>
+              <p>Twenty-seven delicate layers rolled by hand for that signature buttery honeycomb shatter.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-icon">🔥</div>
+            <div class="pillar-content">
+              <h4>Stone Hearth Deck Baking</h4>
+              <p>Baked straight on high-heat stone decks with steam injection for a blistered, caramelized crust.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <a href="about.html" class="btn btn-outline">Read Our Full Story &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Menu Section -->
+  <section class="py-large bg-surface">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 680px; margin: 0 auto 3rem;">
+        <div class="eyebrow eyebrow-pill">Morning Showcase</div>
+        <h2>Today's Fresh Counter</h2>
+        <p>Pulled from the hearth at 6:30 AM. Limited quantities daily to guarantee supreme freshness.</p>
+      </div>
+
+      <div class="grid-4">
+        <!-- Item 1 -->
+        <div class="card reveal">
+          <div class="card-tag">Signature Loaf</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80&auto=format&fit=crop" alt="Heritage Country Sourdough Loaf" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Heritage Sourdough</h3>
+            <p class="card-desc">48-hour wild ferment. Deep caramelized blistered crust, custardy open crumb, mild natural tang.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 260</div>
+              <button class="card-action-btn" type="button">Reserve Loaf</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="card reveal">
+          <div class="card-tag">Fresh at 7 AM</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8317b11df?w=600&q=80&auto=format&fit=crop" alt="Classic French Butter Croissant" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">French Butter Croissant</h3>
+            <p class="card-desc">Hand-laminated with 84% European butter. Golden honeycomb interior, whisper-thin crisp exterior.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 160</div>
+              <button class="card-action-btn" type="button">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="card reveal">
+          <div class="card-tag">Bakery Favorite</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&q=80&auto=format&fit=crop" alt="Ceylon Cinnamon Morning Bun" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Ceylon Cinnamon Bun</h3>
+            <p class="card-desc">Brioche dough layered with aromatic Sri Lankan cinnamon, brown sugar, topped with whipped cream cheese.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 180</div>
+              <button class="card-action-btn" type="button">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="card reveal">
+          <div class="card-tag">Indulgence</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&q=80&auto=format&fit=crop" alt="Valrhona Dark Chocolate Ganache Cake" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Valrhona Truffle Cake</h3>
+            <p class="card-desc">Single-origin 70% dark chocolate sponge with whipped silky ganache and espresso caramel drip.</p>
+            <div class="card-footer">
+              <div class="card-price">₹ 290</div>
+              <button class="card-action-btn" type="button">Reserve</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="menu.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Explore Complete 24-Item Menu &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics / Stats Bar -->
+  <section class="stats-row">
+    <div class="container grid-4">
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="48">0</div>
+        <div class="stat-label">Hours Cold Fermentation</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="27">0</div>
+        <div class="stat-label">Hand-Folded Butter Layers</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="100">0</div>
+        <div class="stat-label">% Pure Stone-Ground Grains</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="500">0</div>
+        <div class="stat-label">Metro District Morning Regulars</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase Section -->
+  <section class="py-large bg-canvas">
+    <div class="container text-center reveal" style="max-width: 960px; margin: 0 auto;">
+      <div class="eyebrow eyebrow-pill">Inside The Hearth</div>
+      <h2>Watch Us Shape Tomorrow's Breakfast</h2>
+      <p style="margin-bottom: 2rem;">Every evening begins the dough shaping. Witness the precision, scoring, and wood-oven rise that makes every loaf unique.</p>
+      
+      <div class="video-showcase">
+        <img 
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop" 
+          alt="Baker shaping artisanal sourdough on wooden flour counter">
+        <a 
+          href="https://www.youtube.com/watch?v=2_DF4_LkWaY" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="video-play-btn" 
+          aria-label="Play documentary video">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials -->
+  <section class="py-large bg-surface">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto 3rem;">
+        <div class="eyebrow eyebrow-pill">From Our Regulars</div>
+        <h2>Voices of Our Patrons</h2>
+        <p>The neighborhood patrons who wake up with us every weekend.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="testimonial-card reveal">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Hands down the finest sourdough in Metro District. The blistered crust crackles when you slice it, and the crumb is heavenly."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">AV</div>
+            <div>
+              <div class="author-name">Anjali Venkat</div>
+              <div class="author-loc">our neighborhood 12th Main</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Meera crafted our anniversary Basque cheesecake. It was perfectly caramelized, silky, and stole the show entirely."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">RM</div>
+            <div>
+              <div class="author-name">Rahul Mukherji</div>
+              <div class="author-loc">Weekend Customer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Walking into Breadly at 7:30 AM with the aroma of hot butter and freshly roasted coffee is my favorite ritual in the city."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">PS</div>
+            <div>
+              <div class="author-name">Priya Soni</div>
+              <div class="author-loc">Morning Coffee Patron</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bakery Gallery Teaser -->
+  <section class="py-large bg-canvas">
+    <div class="container text-center reveal">
+      <div class="eyebrow eyebrow-pill">Visual Journal</div>
+      <h2 style="margin-bottom: 2.5rem;">Moments From The Counter</h2>
+
+      <div class="gallery-grid" style="margin-bottom: 2.5rem;">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&q=80&auto=format&fit=crop" alt="Flaky golden croissants" loading="lazy">
+          <div class="gallery-item-overlay">Normandy Butter Croissants</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&q=80&auto=format&fit=crop" alt="Sea salt chocolate cookies" loading="lazy">
+          <div class="gallery-item-overlay">Sea Salt Dark Cookies</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&q=80&auto=format&fit=crop" alt="Assorted Parisian macarons" loading="lazy">
+          <div class="gallery-item-overlay">Raspberry & Rose Macarons</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=600&q=80&auto=format&fit=crop" alt="Seasonal fruit danish" loading="lazy">
+          <div class="gallery-item-overlay">Seasonal Fruit Danish</div>
+        </div>
+      </div>
+
+      <a href="gallery.html" class="btn btn-outline">Explore Complete Gallery (16 Photos) &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Visit & Pre-Order Bookend Section -->
+  <section class="py-large bg-dark text-center reveal">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
+      <div class="eyebrow eyebrow-pill eyebrow-light">our neighborhood Bakehouse</div>
+      <h2 style="margin-bottom: 1rem; color: #ffffff;">Come Smell The Fresh Bread.</h2>
+      <p style="color: #d1c4b7; margin-bottom: 2rem;">
+        124 Artisan Way, Artisanal Bakehouse Demo 90210<br>
+        Open Tuesday through Sunday from 7:00 AM until 8:00 PM. (Closed Mondays for culture resting).
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-white">Get Directions on Maps</a>
+        <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" target="_blank" class="btn btn-primary">WhatsApp Us: +1 (555) 019-2834</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Breadly<span>.</span></div>
+          <p style="color: #b3a497; font-size: 0.92rem; line-height: 1.6;">
+            Baked with love, served with warmth. Small-batch sourdough, hand-laminated viennoiserie, and honest morning coffee in the heart of Artisanal Bakehouse Demo.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Daily Menu</a></li>
+            <li><a href="about.html">Our Craft & Founders</a></li>
+            <li><a href="gallery.html">Bakehouse Gallery</a></li>
+            <li><a href="order.html">Custom Celebration Bakes</a></li>
+            <li><a href="contact.html">Store Location & Timings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Bakehouse Timings</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li><strong style="color: #fff;">Tue – Fri:</strong> 7:00 AM – 8:00 PM</li>
+            <li><strong style="color: #fff;">Sat – Sun:</strong> 7:00 AM – 9:00 PM</li>
+            <li><strong style="color: #c45b24;">Monday:</strong> Closed (Culture rest)</li>
+            <li style="margin-top: 0.5rem; color: #d49a37;">Fresh Croissants out by 7:15 AM</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find Our Hearth</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li>124 Artisan Way, Suite 400</li>
+            <li>Central Park Arts District</li>
+            <li>Metro District, Suite 400</li>
+            <li style="margin-top: 0.5rem;"><a href="tel:+15550192834" style="color: #fff; font-weight: 600;">+1 (555) 019-2834</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2025 Breadly Bakery • Free Open-Source Demo Showcase • 100% Copyright-Free Media</div>
+        <div>Photography via Unsplash (Free Royalty-Free License) • Demo Showcase</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Quick Lead -->
+  <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 3.67C16.58 3.67 20.28 7.37 20.28 11.92C20.28 16.46 16.58 20.17 12.05 20.17C10.51 20.17 9.04 19.75 7.77 18.99L7.46 18.81L4.35 19.63L5.19 16.6L4.99 16.29C4.16 14.97 3.72 13.47 3.72 11.91C3.72 7.37 7.42 3.67 12.05 3.67Z"/></svg>
+  </a>
+
+</body>
+</html>

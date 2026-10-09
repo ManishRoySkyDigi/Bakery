@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakehouse Gallery — Breadly Bakery | Artisanal Bakehouse Demo</title>
+  <meta name="description" content="Visual moments from our our neighborhood bakehouse. Sourdough scoring, lamination, oven rises, and morning counter bakes.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Breadly<span>.</span><span class="logo-tag">Artisan Bakehouse</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Daily Menu</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="gallery.html" class="nav-link active">Bakehouse</a>
+        <a href="order.html" class="nav-link">Custom Bakes</a>
+        <a href="contact.html" class="nav-link">Visit Us</a>
+        <a href="order.html" class="btn btn-primary nav-action" style="padding: 0.55rem 1.25rem; font-size: 0.8rem;">Pre-Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Mini -->
+  <section class="hero hero-mini">
+    <img 
+      src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=1920&q=80&auto=format&fit=crop" 
+      alt="Freshly baked dark chocolate sea salt cookies" 
+      class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow eyebrow-pill eyebrow-light">Behind The Hearth Counter</div>
+      <h1 class="hero-title">Moments in Flour & Fire</h1>
+      <p class="hero-subtitle" style="margin-bottom: 0;">
+        From 3:30 AM dough shaping to the final golden crackle on the cooling racks.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-large bg-canvas">
+    <div class="container">
+      <div class="text-center" style="max-width: 650px; margin: 0 auto 3rem;">
+        <div class="eyebrow eyebrow-pill">Daily Chronicles</div>
+        <h2>The Life of The Bakehouse</h2>
+        <p>A visual journal of our fermentation, hand-scoring, morning viennoiserie, and community regulars in our neighborhood.</p>
+      </div>
+
+      <!-- 12-Image Masonry/Grid with Direct Src -->
+      <div class="gallery-grid">
+        <div class="gallery-item span-2">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&q=80&auto=format&fit=crop" alt="Heritage Country Sourdough Loaf" loading="lazy">
+          <div class="gallery-item-overlay">Heritage Wild Sourdough Loaves</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&q=80&auto=format&fit=crop" alt="Flaky golden croissants" loading="lazy">
+          <div class="gallery-item-overlay">Hand-Laminated Croissants</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&q=80&auto=format&fit=crop" alt="Sea salt dark chocolate cookies" loading="lazy">
+          <div class="gallery-item-overlay">Sea Salt Dark Cookies</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&h=600&q=80&auto=format&fit=crop" alt="Ceylon cinnamon morning buns" loading="lazy">
+          <div class="gallery-item-overlay">Ceylon Cinnamon Buns</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&h=600&q=80&auto=format&fit=crop" alt="Valrhona dark chocolate cake" loading="lazy">
+          <div class="gallery-item-overlay">Valrhona Truffle Cake</div>
+        </div>
+        <div class="gallery-item span-2">
+          <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1200&q=80&auto=format&fit=crop" alt="Assorted Parisian macarons" loading="lazy">
+          <div class="gallery-item-overlay">Handcrafted Parisian Macarons</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=600&q=80&auto=format&fit=crop" alt="Pastry display" loading="lazy">
+          <div class="gallery-item-overlay">Wild Berry Danishes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&h=600&q=80&auto=format&fit=crop" alt="Botanical celebration cake" loading="lazy">
+          <div class="gallery-item-overlay">Botanical Sponge Cakes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=600&q=80&auto=format&fit=crop" alt="Crusty sourdough crumb" loading="lazy">
+          <div class="gallery-item-overlay">Open Sourdough Crumb</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1534422298391-e4f8317b11df?w=600&h=600&q=80&auto=format&fit=crop" alt="Croissant close up" loading="lazy">
+          <div class="gallery-item-overlay">27 Laminated Layers</div>
+        </div>
+        <div class="gallery-item span-2">
+          <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1200&q=80&auto=format&fit=crop" alt="Bakery interior tables" loading="lazy">
+          <div class="gallery-item-overlay">Morning Counter & Coffee Bar</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="py-large bg-surface">
+    <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
+      <div class="eyebrow eyebrow-pill">Cinematic Short</div>
+      <h2>Inside The Dawn Bakehouse</h2>
+      <p style="margin-bottom: 2rem;">Watch Meera and Arjun take you through the 48-hour lifecycle of our Khapli sourdough loaf.</p>
+      
+      <div class="video-showcase">
+        <img 
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop" 
+          alt="Hands shaping sourdough dough">
+        <a 
+          href="https://www.youtube.com/watch?v=2_DF4_LkWaY" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="video-play-btn" 
+          aria-label="Play video documentary">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram / Community Section -->
+  <section class="py-large bg-canvas text-center">
+    <div class="container" style="max-width: 700px; margin: 0 auto;">
+      <div class="eyebrow eyebrow-pill">Daily Bakes on Instagram</div>
+      <h2 style="margin-bottom: 1rem;">Follow Our Morning Oven Stories</h2>
+      <p style="margin-bottom: 2rem;">We post our daily morning bakes, seasonal pastry drops, and weekend secret specials at 7:00 AM on Instagram.</p>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Follow @breadlybakery &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Breadly<span>.</span></div>
+          <p style="color: #b3a497; font-size: 0.92rem; line-height: 1.6;">
+            Baked with love, served with warmth. Small-batch sourdough, hand-laminated viennoiserie, and honest morning coffee in the heart of Artisanal Bakehouse Demo.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Daily Menu</a></li>
+            <li><a href="about.html">Our Craft & Founders</a></li>
+            <li><a href="gallery.html">Bakehouse Gallery</a></li>
+            <li><a href="order.html">Custom Celebration Bakes</a></li>
+            <li><a href="contact.html">Store Location & Timings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Bakehouse Timings</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li><strong style="color: #fff;">Tue – Fri:</strong> 7:00 AM – 8:00 PM</li>
+            <li><strong style="color: #fff;">Sat – Sun:</strong> 7:00 AM – 9:00 PM</li>
+            <li><strong style="color: #c45b24;">Monday:</strong> Closed (Culture rest)</li>
+            <li style="margin-top: 0.5rem; color: #d49a37;">Fresh Croissants out by 7:15 AM</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find Our Hearth</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li>124 Artisan Way, Suite 400</li>
+            <li>Central Park Arts District</li>
+            <li>Metro District, Suite 400</li>
+            <li style="margin-top: 0.5rem;"><a href="tel:+15550192834" style="color: #fff; font-weight: 600;">+1 (555) 019-2834</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2025 Breadly Bakery • Free Open-Source Demo Showcase • 100% Copyright-Free Media</div>
+        <div>Photography via Unsplash (Free Royalty-Free License) • Demo Showcase</div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 3.67C16.58 3.67 20.28 7.37 20.28 11.92C20.28 16.46 16.58 20.17 12.05 20.17C10.51 20.17 9.04 19.75 7.77 18.99L7.46 18.81L4.35 19.63L5.19 16.6L4.99 16.29C4.16 14.97 3.72 13.47 3.72 11.91C3.72 7.37 7.42 3.67 12.05 3.67Z"/></svg>
+  </a>
+
+</body>
+</html>

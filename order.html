@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Orders & Cakes — Breadly Bakery | Artisanal Bakehouse Demo</title>
+  <meta name="description" content="Order bespoke celebration cakes, sourdough grazing platters, and corporate pastry boxes from Breadly Bakery in our neighborhood.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Breadly<span>.</span><span class="logo-tag">Artisan Bakehouse</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Daily Menu</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="gallery.html" class="nav-link">Bakehouse</a>
+        <a href="order.html" class="nav-link active">Custom Bakes</a>
+        <a href="contact.html" class="nav-link">Visit Us</a>
+        <a href="order.html" class="btn btn-primary nav-action" style="padding: 0.55rem 1.25rem; font-size: 0.8rem;">Pre-Order</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Mini -->
+  <section class="hero hero-mini">
+    <img 
+      src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1920&q=80&auto=format&fit=crop" 
+      alt="Handcrafted celebration cakes and macarons" 
+      class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow eyebrow-pill eyebrow-light">Handcrafted Celebrations</div>
+      <h1 class="hero-title">Custom Cakes & Special Orders</h1>
+      <p class="hero-subtitle" style="margin-bottom: 0;">
+        From intimate birthdays to wedding dessert tables, tell us your vision and we will bake something unforgettable.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3-Step Process -->
+  <section class="py-large bg-canvas">
+    <div class="container">
+      <div class="text-center" style="max-width: 650px; margin: 0 auto 3.5rem;">
+        <div class="eyebrow eyebrow-pill">Simple 3-Step Process</div>
+        <h2>How Custom Bakes Work</h2>
+        <p>We take only 4 custom orders per weekend to dedicate maximum care to your centerpiece.</p>
+      </div>
+
+      <div class="grid-3">
+        <div style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-sm); text-align: center;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--color-accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1.5rem; font-size: 1.25rem;">1</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.35rem;">Tell Us Your Flavor & Vibe</h3>
+          <p style="color: var(--color-muted); font-size: 0.9rem;">Fill the form below with your event date, serving size, and flavor preferences. We accommodate eggless and nut-free requests.</p>
+        </div>
+
+        <div style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-sm); text-align: center;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--color-accent-warm); color: #1a120c; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1.5rem; font-size: 1.25rem;">2</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.35rem;">Consultation & Confirmation</h3>
+          <p style="color: var(--color-muted); font-size: 0.9rem;">Meera reaches out on WhatsApp or phone within 4 business hours with custom design options, flavor profiles, and exact pricing.</p>
+        </div>
+
+        <div style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-sm); text-align: center;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--color-accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1.5rem; font-size: 1.25rem;">3</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.35rem;">Fresh Pickup or Hand Delivery</h3>
+          <p style="color: var(--color-muted); font-size: 0.9rem;">Pick up your boxed cake from our our neighborhood bakehouse, or receive temperature-controlled delivery anywhere in Metro District.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Form & FAQ Split -->
+  <section class="py-large bg-surface">
+    <div class="container" style="max-width: 1000px;">
+      
+      <!-- Order Form -->
+      <div class="form-wrapper">
+        <div class="eyebrow eyebrow-pill">Order Request Form</div>
+        <h2 style="margin-bottom: 0.5rem;">Create Your Custom Order</h2>
+        <p style="margin-bottom: 2rem;">Please submit at least 48 hours in advance for celebration cakes and platters.</p>
+
+        <form id="orderForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="orderName">Your Full Name *</label>
+              <input type="text" id="orderName" class="form-control" placeholder="e.g. Radhika Iyer" required>
+              <div class="form-error">Please enter your name</div>
+            </div>
+            <div class="form-group">
+              <label for="orderPhone">WhatsApp Number *</label>
+              <input type="tel" id="orderPhone" class="form-control" placeholder="+1 (555) 019-2834" required>
+              <div class="form-error">Please enter a valid phone number</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="orderEmail">Email Address *</label>
+              <input type="email" id="orderEmail" class="form-control" placeholder="you@domain.com" required>
+              <div class="form-error">Please enter your email</div>
+            </div>
+            <div class="form-group">
+              <label for="orderEvent">Occasion / Event Type</label>
+              <select id="orderEvent" class="form-control">
+                <option value="birthday">Birthday Celebration</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="wedding">Wedding / Reception Table</option>
+                <option value="corporate">Corporate Morning Grazing</option>
+                <option value="other">Other Gathering</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="orderDate">Date Required *</label>
+              <input type="date" id="orderDate" class="form-control" required>
+              <div class="form-error">Please select a delivery date</div>
+            </div>
+            <div class="form-group">
+              <label for="orderServings">Number of Guests / Servings</label>
+              <select id="orderServings" class="form-control">
+                <option value="6-8">6 – 8 Guests (0.75 kg)</option>
+                <option value="10-15">10 – 15 Guests (1.5 kg)</option>
+                <option value="20-30">20 – 30 Guests (2.5 kg)</option>
+                <option value="30+">Large Gathering (3 kg+)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Dietary Preferences</label>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+              <label style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; text-transform: none;">
+                <input type="checkbox" name="dietary" value="eggless"> 100% Eggless
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; text-transform: none;">
+                <input type="checkbox" name="dietary" value="nutfree"> Nut-Free
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; text-transform: none;">
+                <input type="checkbox" name="dietary" value="glutenfriendly"> Low-Gluten / Khapli Wheat
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="orderFlavor">Flavor Vision & Inscription Message</label>
+            <textarea id="orderFlavor" class="form-control" rows="4" placeholder="Tell us your favorite flavor combinations (e.g. Belgian dark chocolate with salted espresso caramel, or passionfruit vanilla with edible flowers), and any writing on the cake."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.1rem; font-size: 1rem;">
+            Submit Custom Order Request &rarr;
+          </button>
+
+          <div class="form-success">
+            Thank you! Your custom order request has been received. Chef Meera will message you on WhatsApp within 4 hours to finalize details and confirm slot availability.
+          </div>
+        </form>
+      </div>
+
+      <!-- FAQ Section -->
+      <div style="margin-top: 4.5rem;">
+        <div class="text-center" style="margin-bottom: 2.5rem;">
+          <div class="eyebrow eyebrow-pill">Common Inquiries</div>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>How far in advance do I need to book?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                We require at least 48 hours for standard bespoke cakes and 1 week for multi-tiered wedding cakes or catering orders. For weekend dates, we recommend booking 4–5 days prior as our oven slots fill quickly.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>Do you offer 100% eggless options?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                Yes! Our Valrhona Dark Truffle, Spiced Carrot Pecan, and Mango Passionfruit cakes can all be crafted 100% eggless using organic condensed milk and natural fruit pectin binders with no compromise on texture.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>How does delivery work in Metro District?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                We offer direct bakehouse pickup at our neighborhood 100ft Road, or temperature-controlled four-wheeler car delivery via our dedicated delivery partners across our neighborhood, Koramangala, CBD, Whitefield, and HSR Layout.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>What are your payment terms for custom bakes?</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                A 50% advance via UPI (GPay / PhonePe / Paytm) confirms your date on our bake calendar. The remaining balance is payable upon delivery or pickup.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Breadly<span>.</span></div>
+          <p style="color: #b3a497; font-size: 0.92rem; line-height: 1.6;">
+            Baked with love, served with warmth. Small-batch sourdough, hand-laminated viennoiserie, and honest morning coffee in the heart of Artisanal Bakehouse Demo.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Daily Menu</a></li>
+            <li><a href="about.html">Our Craft & Founders</a></li>
+            <li><a href="gallery.html">Bakehouse Gallery</a></li>
+            <li><a href="order.html">Custom Celebration Bakes</a></li>
+            <li><a href="contact.html">Store Location & Timings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Bakehouse Timings</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li><strong style="color: #fff;">Tue – Fri:</strong> 7:00 AM – 8:00 PM</li>
+            <li><strong style="color: #fff;">Sat – Sun:</strong> 7:00 AM – 9:00 PM</li>
+            <li><strong style="color: #c45b24;">Monday:</strong> Closed (Culture rest)</li>
+            <li style="margin-top: 0.5rem; color: #d49a37;">Fresh Croissants out by 7:15 AM</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find Our Hearth</h4>
+          <ul style="color: #b3a497; font-size: 0.9rem;">
+            <li>124 Artisan Way, Suite 400</li>
+            <li>Central Park Arts District</li>
+            <li>Metro District, Suite 400</li>
+            <li style="margin-top: 0.5rem;"><a href="tel:+15550192834" style="color: #fff; font-weight: 600;">+1 (555) 019-2834</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2025 Breadly Bakery • Free Open-Source Demo Showcase • 100% Copyright-Free Media</div>
+        <div>Photography via Unsplash (Free Royalty-Free License) • Demo Showcase</div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 3.67C16.58 3.67 20.28 7.37 20.28 11.92C20.28 16.46 16.58 20.17 12.05 20.17C10.51 20.17 9.04 19.75 7.77 18.99L7.46 18.81L4.35 19.63L5.19 16.6L4.99 16.29C4.16 14.97 3.72 13.47 3.72 11.91C3.72 7.37 7.42 3.67 12.05 3.67Z"/></svg>
+  </a>
+
+</body>
+</html>
