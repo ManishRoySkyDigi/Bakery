@@ -6,6 +6,7 @@
   <title>Breadly Bakery — Artisanal Sourdough & Patisserie | Artisanal Bakehouse Demo</title>
   <meta name="description" content="Artisanal sourdough, flaky French butter croissants, and handcrafted morning bakes in Artisanal Bakehouse Demo. 48-hour wild fermentation, organic heritage flours.">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="js/main.js" defer></script>
@@ -162,6 +163,11 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Heritage Sourdough</h3>
+            <div class="card-sensory-row">
+              <span class="sensory-pill">🌾 82% Hydration</span>
+              <span class="sensory-pill">⏳ 48-Hr Ferment</span>
+              <span class="sensory-pill">🔥 260°C Hearth</span>
+            </div>
             <p class="card-desc">48-hour wild ferment. Deep caramelized blistered crust, custardy open crumb, mild natural tang.</p>
             <div class="card-footer">
               <div class="card-price">₹ 260</div>
@@ -178,6 +184,11 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">French Butter Croissant</h3>
+            <div class="card-sensory-row">
+              <span class="sensory-pill">🧈 84% Butter</span>
+              <span class="sensory-pill">🥐 27 Folded Layers</span>
+              <span class="sensory-pill">✨ Hand-Laminated</span>
+            </div>
             <p class="card-desc">Hand-laminated with 84% European butter. Golden honeycomb interior, whisper-thin crisp exterior.</p>
             <div class="card-footer">
               <div class="card-price">₹ 160</div>
@@ -194,6 +205,11 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Ceylon Cinnamon Bun</h3>
+            <div class="card-sensory-row">
+              <span class="sensory-pill">🌿 Ceylon Cinnamon</span>
+              <span class="sensory-pill">🍯 Brioche Dough</span>
+              <span class="sensory-pill">🧀 Whipped Cream</span>
+            </div>
             <p class="card-desc">Brioche dough layered with aromatic Sri Lankan cinnamon, brown sugar, topped with whipped cream cheese.</p>
             <div class="card-footer">
               <div class="card-price">₹ 180</div>
@@ -210,6 +226,11 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Valrhona Truffle Cake</h3>
+            <div class="card-sensory-row">
+              <span class="sensory-pill">🍫 70% Valrhona</span>
+              <span class="sensory-pill">☕ Arabica Drip</span>
+              <span class="sensory-pill">☁️ Silky Ganache</span>
+            </div>
             <p class="card-desc">Single-origin 70% dark chocolate sponge with whipped silky ganache and espresso caramel drip.</p>
             <div class="card-footer">
               <div class="card-price">₹ 290</div>
@@ -221,6 +242,41 @@
 
       <div class="text-center" style="margin-top: 3rem;">
         <a href="menu.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Explore Complete 24-Item Menu &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Baker's Scoring & Hearth Rise Transformation -->
+  <section class="py-large bg-surface" id="scoring-experience">
+    <div class="container text-center reveal" style="max-width: 960px; margin: 0 auto;">
+      <div class="eyebrow eyebrow-pill">Interactive Baker's Transformation</div>
+      <h2>From Razor Score to Blistered Hearth.</h2>
+      <p style="max-width: 680px; margin: 0 auto 2.5rem;">
+        Drag the golden handle horizontally across the sourdough loaf to witness how 48 hours of cold fermentation blooms under 260°C stone heat—expanding razor score marks into an ear of deep caramelized blistered crust.
+      </p>
+
+      <div class="compare-container" id="scoringCompare">
+        <!-- After Image (Fully baked golden sourdough loaf) -->
+        <img class="compare-img-after" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600&q=80&auto=format&fit=crop" alt="Finished stone-baked sourdough loaf with deep blistered ear" loading="lazy">
+        <div class="compare-badge compare-badge-after">After: 260°C Hearth Rise</div>
+
+        <!-- Before Image Wrapper (Raw shaped & razor-scored dough in banneton) -->
+        <div class="compare-img-before-wrapper">
+          <img class="compare-img-before" src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=1600&q=80&auto=format&fit=crop" alt="Raw shaped sourdough dough with razor score marks" loading="lazy">
+          <div class="compare-badge compare-badge-before">Before: Cold-Fermented & Razor Scored</div>
+        </div>
+
+        <!-- Draggable Handle -->
+        <div class="compare-handle-line">
+          <div class="compare-handle-btn" aria-label="Drag to compare dough scoring before and after baking">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -247,25 +303,159 @@
     </div>
   </section>
 
-  <!-- Video Showcase Section -->
-  <section class="py-large bg-canvas">
+  <!-- Live 24-Hour Bakehouse Hearth Timeline -->
+  <section class="py-large bg-canvas" id="hearth-timeline">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 720px; margin: 0 auto 3rem;">
+        <div class="eyebrow eyebrow-pill">Live Hearth Clock</div>
+        <h2>The 24-Hour Rhythms of Our Hearth</h2>
+        <p>Our stone ovens never truly sleep. See what our bakers are crafting right now based on your local time.</p>
+      </div>
+
+      <div class="hearth-schedule-grid reveal">
+        <!-- 03:30 AM -->
+        <div class="schedule-card" data-start="3.5" data-end="5.0">
+          <div class="schedule-header">
+            <span class="schedule-time">03:30 AM</span>
+            <span class="schedule-status">Stage 01</span>
+          </div>
+          <h3 class="schedule-step-name">Fire Lighting & Starter Feeding</h3>
+          <p class="schedule-desc">Hearth stone preheating to 260°C. Our 6-year mother starter 'Levain Luna' is revived with stone-ground rye.</p>
+          <span class="schedule-pastry-tag">🔥 Stone Oven Pre-Heat</span>
+        </div>
+
+        <!-- 05:00 AM -->
+        <div class="schedule-card" data-start="5.0" data-end="6.5">
+          <div class="schedule-header">
+            <span class="schedule-time">05:00 AM</span>
+            <span class="schedule-status">Stage 02</span>
+          </div>
+          <h3 class="schedule-step-name">Lamination & Viennoiserie Roll</h3>
+          <p class="schedule-desc">Cold-folding European butter into chilled dough. 27 delicate sheets rolled and shaped before morning humidity rises.</p>
+          <span class="schedule-pastry-tag">🧈 Croissant Sheeting</span>
+        </div>
+
+        <!-- 06:30 AM -->
+        <div class="schedule-card" data-start="6.5" data-end="9.5">
+          <div class="schedule-header">
+            <span class="schedule-time">06:30 AM</span>
+            <span class="schedule-status">Stage 03</span>
+          </div>
+          <h3 class="schedule-step-name">First Hearth Pull & Door Unlock</h3>
+          <p class="schedule-desc">Golden blistered country loaves pulled steaming onto cooling racks as the doors unlock for early morning coffee regulars.</p>
+          <span class="schedule-pastry-tag">🥖 Fresh Sourdough Batch #1</span>
+        </div>
+
+        <!-- 09:30 AM -->
+        <div class="schedule-card" data-start="9.5" data-end="14.0">
+          <div class="schedule-header">
+            <span class="schedule-time">09:30 AM</span>
+            <span class="schedule-status">Stage 04</span>
+          </div>
+          <h3 class="schedule-step-name">Brioche & Cinnamon Swirl Bake</h3>
+          <p class="schedule-desc">Pecan sticky buns, brioche knots, and spiced Ceylon cinnamon rolls glazed with warm vanilla bean cream cheese.</p>
+          <span class="schedule-pastry-tag">🌿 Warm Mid-Morning Batch</span>
+        </div>
+
+        <!-- 02:00 PM -->
+        <div class="schedule-card" data-start="14.0" data-end="19.0">
+          <div class="schedule-header">
+            <span class="schedule-time">02:00 PM</span>
+            <span class="schedule-status">Stage 05</span>
+          </div>
+          <h3 class="schedule-step-name">Patisserie Assembly & Tea Counter</h3>
+          <p class="schedule-desc">Delicate fruit tarts filled with silky custard, choux craquelin, and single-origin Valrhona chocolate ganache cakes.</p>
+          <span class="schedule-pastry-tag">☕ Afternoon Pastry Counter</span>
+        </div>
+
+        <!-- 07:00 PM -->
+        <div class="schedule-card" data-start="19.0" data-end="27.5">
+          <div class="schedule-header">
+            <span class="schedule-time">07:00 PM</span>
+            <span class="schedule-status">Stage 06</span>
+          </div>
+          <h3 class="schedule-step-name">Tomorrow's Autolyse & Cold Retard</h3>
+          <p class="schedule-desc">Flour and spring water rest for natural hydration. Loaves shaped into bannetons and tucked into the cold cellar for 48 hours.</p>
+          <span class="schedule-pastry-tag">🌾 48-Hour Cold Ferment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase Section: The Hearth Cinema Hub -->
+  <section class="py-large bg-canvas" id="video-theater">
     <div class="container text-center reveal" style="max-width: 960px; margin: 0 auto;">
-      <div class="eyebrow eyebrow-pill">Inside The Hearth</div>
-      <h2>Watch Us Shape Tomorrow's Breakfast</h2>
-      <p style="margin-bottom: 2rem;">Every evening begins the dough shaping. Witness the precision, scoring, and wood-oven rise that makes every loaf unique.</p>
+      <div class="video-badge-pill">
+        <span class="video-pulse-dot"></span> 4K Bakehouse Cinema • All 3 Episodes
+      </div>
+      <h2 id="theaterActiveTitle">Watch Us Shape Tomorrow's Breakfast</h2>
+      <p id="theaterActiveDesc" style="margin-bottom: 2.25rem; max-width: 620px; margin-left: auto; margin-right: auto;">
+        From 48-hour wild sourdough kneading to golden stone hearth pulls. Select any episode below to preview, or click to play in 4K theater.
+      </p>
       
-      <div class="video-showcase">
-        <img 
-          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop" 
-          alt="Baker shaping artisanal sourdough on wooden flour counter">
-        <a 
-          href="https://www.youtube.com/watch?v=2_DF4_LkWaY" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+      <!-- Main Active Video Player -->
+      <div class="video-showcase" id="theaterShowcase" data-video-modal data-video-src="assets/videos/hero-knead.mp4">
+        <video 
+          id="theaterMainVideo"
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          preload="auto"
+          poster="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop">
+          <source id="theaterVideoSource" src="assets/videos/hero-knead.mp4" type="video/mp4">
+        </video>
+        <button 
+          type="button"
           class="video-play-btn" 
-          aria-label="Play documentary video">
+          id="theaterPlayBtn"
+          data-video-modal
+          data-video-src="assets/videos/hero-knead.mp4"
+          aria-label="Play 4K documentary in page theater">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </a>
+        </button>
+      </div>
+
+      <!-- Episode Switcher Cards -->
+      <div class="video-playlist-tabs reveal">
+        <!-- Episode 1 -->
+        <div class="video-tab-card is-active" 
+             data-src="assets/videos/hero-knead.mp4" 
+             data-title="Episode 01: Sourdough Hand-Kneading"
+             data-desc="Close-up artisan craftsmanship: working 82% hydration wild ferment dough across flour-dusted timber.">
+          <div class="video-tab-card-header">
+            <span class="video-tab-pill">Episode 01</span>
+            <span style="font-size: 0.8rem; color: #d49a37;">4K HD</span>
+          </div>
+          <div class="video-tab-title">🥖 Sourdough Hand-Kneading</div>
+          <div class="video-tab-desc">Working 82% hydration dough on flour-dusted timber.</div>
+        </div>
+
+        <!-- Episode 2 -->
+        <div class="video-tab-card" 
+             data-src="assets/videos/dough-flour.mp4" 
+             data-title="Episode 02: Flour Mixing & Cloud Folding"
+             data-desc="Stone-ground whole wheat blending into organic spring water to ignite natural fermentation.">
+          <div class="video-tab-card-header">
+            <span class="video-tab-pill">Episode 02</span>
+            <span style="font-size: 0.8rem; color: #d49a37;">4K HD</span>
+          </div>
+          <div class="video-tab-title">🌾 Flour Mixing & Sifting</div>
+          <div class="video-tab-desc">Stone-ground grains folding into natural spring water.</div>
+        </div>
+
+        <!-- Episode 3 -->
+        <div class="video-tab-card" 
+             data-src="assets/videos/bread-showcase.mp4" 
+             data-title="Episode 03: Stone Hearth Loaf & Wheat Showcase"
+             data-desc="Blistered caramelized crusts, rustic ears, and golden wheat stalks fresh from morning cooling racks.">
+          <div class="video-tab-card-header">
+            <span class="video-tab-pill">Episode 03</span>
+            <span style="font-size: 0.8rem; color: #d49a37;">4K HD</span>
+          </div>
+          <div class="video-tab-title">🥐 Hearth Loaf Showcase</div>
+          <div class="video-tab-desc">Blistered caramelized crusts fresh from morning racks.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -421,6 +611,9 @@
   <a href="https://wa.me/?text=Hello%20Breadly%20Bakery%2C%20I%20would%20like%20to%20inquire%20about%20your%20demo%20menu" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 3.67C16.58 3.67 20.28 7.37 20.28 11.92C20.28 16.46 16.58 20.17 12.05 20.17C10.51 20.17 9.04 19.75 7.77 18.99L7.46 18.81L4.35 19.63L5.19 16.6L4.99 16.29C4.16 14.97 3.72 13.47 3.72 11.91C3.72 7.37 7.42 3.67 12.05 3.67Z"/></svg>
   </a>
+
+  <!-- Organic Flour Dust Particles Canvas -->
+  <canvas id="flourCanvas"></canvas>
 
 </body>
 </html>
