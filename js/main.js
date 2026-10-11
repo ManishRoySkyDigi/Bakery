@@ -36,14 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Navigation Scroll Effect
+  // 2. Navigation Scroll Effect (State-cached for zero layout thrashing on mobile scroll)
   const nav = document.querySelector('.nav');
   if (nav) {
+    let isNavScrolled = null;
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
+      const shouldBeScrolled = window.scrollY > 40;
+      if (shouldBeScrolled !== isNavScrolled) {
+        isNavScrolled = shouldBeScrolled;
+        nav.classList.toggle('scrolled', shouldBeScrolled);
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -122,104 +123,133 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. GSAP Entrance & Parallax Motion
+  // 5. GSAP Entrance & Parallax Motion (Desktop-only scrub parallax to keep mobile touch scroll 100% native 60fps)
   if (!prefersReducedMotion && typeof gsap !== 'undefined') {
     try {
       if (typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Hero Parallax Scrub (Deep cinematic layer)
-        const heroMedia = document.querySelector('.hero-video, .hero-img');
-        if (heroMedia) {
-          gsap.to(heroMedia, {
-            yPercent: 18,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '.hero',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true
-            }
-          });
-        }
+        if (!isTouchDevice) {
+          // Hero Parallax Scrub (Desktop only)
+          const heroMedia = document.querySelector('.hero-video, .hero-img');
+          if (heroMedia) {
+            gsap.to(heroMedia, {
+              yPercent: 18,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+              }
+            });
+          }
 
-        // Split Section Image Parallax
-        const splitImg = document.querySelector('.split-img-wrapper img');
-        if (splitImg) {
-          gsap.to(splitImg, {
-            yPercent: 12,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '.split-img-wrapper',
-              start: 'top bottom',
-              end: 'bottom top',
-              scrub: true
-            }
-          });
+          // Split Section Image Parallax (Desktop only)
+          const splitImg = document.querySelector('.split-img-wrapper img');
+          if (splitImg) {
+            gsap.to(splitImg, {
+              yPercent: 12,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '.split-img-wrapper',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+              }
+            });
+          }
         }
 
         // Hero Entrance
         gsap.from('.hero-content > *', {
           opacity: 0,
-          y: 28,
-          duration: 1,
-          stagger: 0.12,
+          y: isTouchDevice ? 16 : 28,
+          duration: isTouchDevice ? 0.65 : 1,
+          stagger: 0.1,
           ease: 'power3.out',
-          delay: 0.15
+          delay: 0.1
         });
 
-        // Staggered Scroll Reveals
-        const revealElements = document.querySelectorAll('.reveal');
-        revealElements.forEach(el => {
-          gsap.from(el, {
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 88%',
-              once: true
-            },
-            opacity: 0,
-            y: 35,
-            duration: 0.85,
-            ease: 'power2.out'
+        // Staggered Scroll Reveals (Desktop only to prevent scroll-triggered main thread work on mobile)
+        if (!isTouchDevice) {
+          const revealElements = document.querySelectorAll('.reveal');
+          revealElements.forEach(el => {
+            gsap.from(el, {
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 88%',
+                once: true
+              },
+              opacity: 0,
+              y: 30,
+              duration: 0.8,
+              ease: 'power2.out'
+            });
           });
-        });
+        }
       }
     } catch (err) {
       console.warn('GSAP animations skipped:', err);
     }
   }
 
-  // 6. Tactile 3D Card Physics & Specular Glare
-  const tiltCards = document.querySelectorAll('.card, .testimonial-card, .value-card');
-  tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+  // 6. Tactile 3D Card Physics & Specular Glare (Desktop Fine Pointer Only)
+  if (!isTouchDevice && !prefersReducedMotion) {
+    const tiltCards = document.querySelectorAll('.card, .testimonial-card, .value-card');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-      // Update spotlight position vars
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
 
-      if (!prefersReducedMotion) {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         const rotateX = ((y - centerY) / centerY) * -6;
         const rotateY = ((x - centerX) / centerX) * 6;
 
         card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale3d(1.015, 1.015, 1.015)`;
-      }
+      }, { passive: true });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // 7. Simultaneous 3-Video Cinema Playback & Optional Fullscreen Theater Modal
+  const inlineVideos = document.querySelectorAll('.inline-cinema-video');
+  if (inlineVideos.length > 0) {
+    // Ensure muted inline playback across iOS Safari & Android Chrome
+    inlineVideos.forEach(vid => {
+      vid.muted = true;
+      vid.defaultMuted = true;
+      vid.playsInline = true;
     });
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const vid = entry.target;
+          if (entry.isIntersecting) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        });
+      }, { rootMargin: '250px 0px', threshold: 0.05 });
 
-  // 7. In-Page Cinematic Video Modal Theater
+      inlineVideos.forEach(vid => videoObserver.observe(vid));
+    } else {
+      inlineVideos.forEach(vid => vid.play().catch(() => {}));
+    }
+  }
+
   const videoTriggers = document.querySelectorAll('.video-play-btn, [data-video-modal], .video-showcase');
   if (videoTriggers.length > 0) {
-    // Inject Video Modal DOM if not present
     let videoModal = document.getElementById('videoModal');
     if (!videoModal) {
       videoModal = document.createElement('div');
@@ -275,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     videoTriggers.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        // If clicking directly on a playlist tab, let playlist tab handler handle it
         if (e.target.closest('.video-tab-card')) return;
         e.preventDefault();
         const videoSrc = btn.getAttribute('data-video-src');
@@ -283,31 +312,6 @@ document.addEventListener('DOMContentLoaded', () => {
         openVideo(videoId, videoSrc);
       });
     });
-
-    // Video Playlist Switcher (All 3 episodes consolidated in one place)
-    const playlistTabs = document.querySelectorAll('.video-tab-card');
-    const theaterMainVideo = document.getElementById('theaterMainVideo');
-    const theaterShowcase = document.getElementById('theaterShowcase');
-    const theaterPlayBtn = document.getElementById('theaterPlayBtn');
-
-    if (playlistTabs.length > 0 && theaterMainVideo) {
-      playlistTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          playlistTabs.forEach(t => t.classList.remove('is-active'));
-          tab.classList.add('is-active');
-
-          const newSrc = tab.getAttribute('data-src');
-          if (newSrc) {
-            theaterMainVideo.src = newSrc;
-            theaterMainVideo.load();
-            theaterMainVideo.play().catch(() => {});
-
-            if (theaterShowcase) theaterShowcase.setAttribute('data-video-src', newSrc);
-            if (theaterPlayBtn) theaterPlayBtn.setAttribute('data-video-src', newSrc);
-          }
-        });
-      });
-    }
 
     closeBtn.addEventListener('click', closeVideo);
     videoModal.addEventListener('click', (e) => {
@@ -624,9 +628,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateHearthStage, 300000);
   }
 
-  // 16. Organic Flour Dust Canvas Micro-Particles
+  // 16. Organic Flour Dust Canvas Micro-Particles (Desktop Only — saves mobile GPU/battery)
   const canvas = document.getElementById('flourCanvas');
-  if (canvas && !prefersReducedMotion) {
+  if (canvas && !isTouchDevice && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);

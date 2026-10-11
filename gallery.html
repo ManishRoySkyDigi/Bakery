@@ -6,7 +6,7 @@
   <title>Bakehouse Gallery — Breadly Bakery | Artisanal Bakehouse Demo</title>
   <meta name="description" content="Visual moments from our our neighborhood bakehouse. Sourdough scoring, lamination, oven rises, and morning counter bakes.">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="js/main.js" defer></script>
@@ -108,30 +108,89 @@
     </div>
   </section>
 
-  <!-- Video Section -->
+  <!-- Video Section: All 3 Videos Playing Together -->
   <section class="py-large bg-surface">
-    <div class="container text-center reveal" style="max-width: 900px; margin: 0 auto;">
+    <div class="container text-center reveal">
       <div class="video-badge-pill">
-        <span class="video-pulse-dot"></span> 4K Documentary • Behind The Hearth
+        <span class="video-pulse-dot"></span> 4K Documentary • All 3 Live Feeds Playing Together
       </div>
       <h2>Inside The Dawn Bakehouse</h2>
-      <p style="margin-bottom: 2.25rem; max-width: 620px; margin-left: auto; margin-right: auto;">
-        Watch Meera and Arjun take you through the 48-hour lifecycle of our Khapli sourdough loaf. Click to watch in-page.
+      <p style="margin-bottom: 2.25rem; max-width: 640px; margin-left: auto; margin-right: auto;">
+        Watch Meera and Arjun take you through all three stages of our 48-hour sourdough craft playing simultaneously.
       </p>
-      
-      <div class="video-showcase" data-video-modal data-video-id="2_DF4_LkWaY">
-        <img 
-          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop" 
-          alt="Hands shaping sourdough dough"
-          loading="lazy">
-        <button 
-          type="button"
-          class="video-play-btn" 
-          data-video-modal
-          data-video-id="2_DF4_LkWaY"
-          aria-label="Play 4K documentary in page theater">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </button>
+
+      <div class="video-trio-grid">
+        <article class="video-card-item">
+          <div class="video-card-media" data-video-modal data-video-src="assets/videos/hero-knead.mp4">
+            <span class="video-card-live-tag"><span class="video-card-live-dot"></span> Episode 01 • Live Loop</span>
+            <video 
+              class="inline-cinema-video"
+              src="assets/videos/hero-knead.mp4"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75&auto=format&fit=crop">
+            </video>
+            <button type="button" class="video-card-expand" data-video-modal data-video-src="assets/videos/hero-knead.mp4" aria-label="Expand Episode 01 in theater">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="video-card-body">
+            <div class="video-card-meta"><span>Stage 01 • Dough Craft</span><span>4K HD</span></div>
+            <h3 class="video-card-title">🥖 Sourdough Hand-Kneading</h3>
+            <p class="video-card-desc">Working 82% hydration wild ferment dough across flour-dusted timber.</p>
+          </div>
+        </article>
+
+        <article class="video-card-item">
+          <div class="video-card-media" data-video-modal data-video-src="assets/videos/dough-flour.mp4">
+            <span class="video-card-live-tag"><span class="video-card-live-dot"></span> Episode 02 • Live Loop</span>
+            <video 
+              class="inline-cinema-video"
+              src="assets/videos/dough-flour.mp4"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=600&q=75&auto=format&fit=crop">
+            </video>
+            <button type="button" class="video-card-expand" data-video-modal data-video-src="assets/videos/dough-flour.mp4" aria-label="Expand Episode 02 in theater">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="video-card-body">
+            <div class="video-card-meta"><span>Stage 02 • Wild Ferment</span><span>4K HD</span></div>
+            <h3 class="video-card-title">🌾 Flour Mixing &amp; Sifting</h3>
+            <p class="video-card-desc">Stone-ground heritage whole wheat blending into organic spring water.</p>
+          </div>
+        </article>
+
+        <article class="video-card-item">
+          <div class="video-card-media" data-video-modal data-video-src="assets/videos/bread-showcase.mp4">
+            <span class="video-card-live-tag"><span class="video-card-live-dot"></span> Episode 03 • Live Loop</span>
+            <video 
+              class="inline-cinema-video"
+              src="assets/videos/bread-showcase.mp4"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=75&auto=format&fit=crop">
+            </video>
+            <button type="button" class="video-card-expand" data-video-modal data-video-src="assets/videos/bread-showcase.mp4" aria-label="Expand Episode 03 in theater">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="video-card-body">
+            <div class="video-card-meta"><span>Stage 03 • Hearth Pull</span><span>4K HD</span></div>
+            <h3 class="video-card-title">🥐 Hearth Loaf Showcase</h3>
+            <p class="video-card-desc">Blistered caramelized crusts fresh from morning cooling racks.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -186,8 +245,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2025 Breadly Bakery • Free Open-Source Demo Showcase • 100% Copyright-Free Media</div>
-        <div>Photography via Unsplash (Free Royalty-Free License) • Demo Showcase</div>
+        <div>&copy; 2026 Breadly Bakery • Artisanal Bakehouse Showcase</div>
+        <div class="footer-demo-badge">✦ Demo by <strong>Manish</strong></div>
       </div>
     </div>
   </footer>

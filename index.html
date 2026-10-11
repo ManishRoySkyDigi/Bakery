@@ -6,7 +6,7 @@
   <title>Breadly Bakery — Artisanal Sourdough & Patisserie | Artisanal Bakehouse Demo</title>
   <meta name="description" content="Artisanal sourdough, flaky French butter croissants, and handcrafted morning bakes in Artisanal Bakehouse Demo. 48-hour wild fermentation, organic heritage flours.">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="js/main.js" defer></script>
@@ -38,8 +38,10 @@
   <!-- Hero Section -->
   <section class="hero">
     <img 
-      src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920&q=80&auto=format&fit=crop" 
+      src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400&q=80&auto=format&fit=crop" 
       alt="Artisanal blistered sourdough loaf fresh from the hearth" 
+      fetchpriority="high"
+      decoding="async"
       class="hero-img">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -382,80 +384,117 @@
     </div>
   </section>
 
-  <!-- Video Showcase Section: The Hearth Cinema Hub -->
+  <!-- Video Showcase Section: Simultaneous 3-Video Hearth Cinema Hub -->
   <section class="py-large bg-canvas" id="video-theater">
-    <div class="container text-center reveal" style="max-width: 960px; margin: 0 auto;">
+    <div class="container text-center reveal">
       <div class="video-badge-pill">
-        <span class="video-pulse-dot"></span> 4K Bakehouse Cinema • All 3 Episodes
+        <span class="video-pulse-dot"></span> 4K Bakehouse Cinema • All 3 Live Feeds Playing Together
       </div>
-      <h2 id="theaterActiveTitle">Watch Us Shape Tomorrow's Breakfast</h2>
-      <p id="theaterActiveDesc" style="margin-bottom: 2.25rem; max-width: 620px; margin-left: auto; margin-right: auto;">
-        From 48-hour wild sourdough kneading to golden stone hearth pulls. Select any episode below to preview, or click to play in 4K theater.
+      <h2>Watch Us Shape Tomorrow's Breakfast</h2>
+      <p style="margin-bottom: 2.25rem; max-width: 660px; margin-left: auto; margin-right: auto;">
+        From 48-hour wild sourdough kneading and flour sifting to golden stone hearth pulls—all three stages of our morning bakehouse craft playing live together.
       </p>
-      
-      <!-- Main Active Video Player -->
-      <div class="video-showcase" id="theaterShowcase" data-video-modal data-video-src="assets/videos/hero-knead.mp4">
-        <video 
-          id="theaterMainVideo"
-          autoplay 
-          muted 
-          loop 
-          playsinline 
-          preload="auto"
-          poster="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop">
-          <source id="theaterVideoSource" src="assets/videos/hero-knead.mp4" type="video/mp4">
-        </video>
-        <button 
-          type="button"
-          class="video-play-btn" 
-          id="theaterPlayBtn"
-          data-video-modal
-          data-video-src="assets/videos/hero-knead.mp4"
-          aria-label="Play 4K documentary in page theater">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-      </div>
 
-      <!-- Episode Switcher Cards -->
-      <div class="video-playlist-tabs reveal">
-        <!-- Episode 1 -->
-        <div class="video-tab-card is-active" 
-             data-src="assets/videos/hero-knead.mp4" 
-             data-title="Episode 01: Sourdough Hand-Kneading"
-             data-desc="Close-up artisan craftsmanship: working 82% hydration wild ferment dough across flour-dusted timber.">
-          <div class="video-tab-card-header">
-            <span class="video-tab-pill">Episode 01</span>
-            <span style="font-size: 0.8rem; color: #d49a37;">4K HD</span>
+      <!-- Simultaneous 3-Video Grid -->
+      <div class="video-trio-grid">
+        <!-- Video 1: Sourdough Hand-Kneading -->
+        <article class="video-card-item">
+          <div class="video-card-media" data-video-modal data-video-src="assets/videos/hero-knead.mp4">
+            <span class="video-card-live-tag"><span class="video-card-live-dot"></span> Episode 01 • Live Loop</span>
+            <video 
+              class="inline-cinema-video"
+              src="assets/videos/hero-knead.mp4"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75&auto=format&fit=crop">
+            </video>
+            <button 
+              type="button"
+              class="video-card-expand"
+              data-video-modal
+              data-video-src="assets/videos/hero-knead.mp4"
+              aria-label="Expand Episode 01 in theater">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
           </div>
-          <div class="video-tab-title">🥖 Sourdough Hand-Kneading</div>
-          <div class="video-tab-desc">Working 82% hydration dough on flour-dusted timber.</div>
-        </div>
+          <div class="video-card-body">
+            <div class="video-card-meta">
+              <span>Stage 01 • Dough Craft</span>
+              <span>4K HD</span>
+            </div>
+            <h3 class="video-card-title">🥖 Sourdough Hand-Kneading</h3>
+            <p class="video-card-desc">Close-up artisan craftsmanship: working 82% hydration wild ferment dough across flour-dusted timber.</p>
+          </div>
+        </article>
 
-        <!-- Episode 2 -->
-        <div class="video-tab-card" 
-             data-src="assets/videos/dough-flour.mp4" 
-             data-title="Episode 02: Flour Mixing & Cloud Folding"
-             data-desc="Stone-ground whole wheat blending into organic spring water to ignite natural fermentation.">
-          <div class="video-tab-card-header">
-            <span class="video-tab-pill">Episode 02</span>
-            <span style="font-size: 0.8rem; color: #d49a37;">4K HD</span>
+        <!-- Video 2: Flour Mixing & Cloud Folding -->
+        <article class="video-card-item">
+          <div class="video-card-media" data-video-modal data-video-src="assets/videos/dough-flour.mp4">
+            <span class="video-card-live-tag"><span class="video-card-live-dot"></span> Episode 02 • Live Loop</span>
+            <video 
+              class="inline-cinema-video"
+              src="assets/videos/dough-flour.mp4"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=600&q=75&auto=format&fit=crop">
+            </video>
+            <button 
+              type="button"
+              class="video-card-expand"
+              data-video-modal
+              data-video-src="assets/videos/dough-flour.mp4"
+              aria-label="Expand Episode 02 in theater">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
           </div>
-          <div class="video-tab-title">🌾 Flour Mixing & Sifting</div>
-          <div class="video-tab-desc">Stone-ground grains folding into natural spring water.</div>
-        </div>
+          <div class="video-card-body">
+            <div class="video-card-meta">
+              <span>Stage 02 • Wild Ferment</span>
+              <span>4K HD</span>
+            </div>
+            <h3 class="video-card-title">🌾 Flour Mixing &amp; Sifting</h3>
+            <p class="video-card-desc">Stone-ground heritage whole wheat blending into organic spring water to ignite natural fermentation.</p>
+          </div>
+        </article>
 
-        <!-- Episode 3 -->
-        <div class="video-tab-card" 
-             data-src="assets/videos/bread-showcase.mp4" 
-             data-title="Episode 03: Stone Hearth Loaf & Wheat Showcase"
-             data-desc="Blistered caramelized crusts, rustic ears, and golden wheat stalks fresh from morning cooling racks.">
-          <div class="video-tab-card-header">
-            <span class="video-tab-pill">Episode 03</span>
-            <span style="font-size: 0.8rem; color: #d49a37;">4K HD</span>
+        <!-- Video 3: Stone Hearth Loaf & Wheat Showcase -->
+        <article class="video-card-item">
+          <div class="video-card-media" data-video-modal data-video-src="assets/videos/bread-showcase.mp4">
+            <span class="video-card-live-tag"><span class="video-card-live-dot"></span> Episode 03 • Live Loop</span>
+            <video 
+              class="inline-cinema-video"
+              src="assets/videos/bread-showcase.mp4"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=75&auto=format&fit=crop">
+            </video>
+            <button 
+              type="button"
+              class="video-card-expand"
+              data-video-modal
+              data-video-src="assets/videos/bread-showcase.mp4"
+              aria-label="Expand Episode 03 in theater">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
           </div>
-          <div class="video-tab-title">🥐 Hearth Loaf Showcase</div>
-          <div class="video-tab-desc">Blistered caramelized crusts fresh from morning racks.</div>
-        </div>
+          <div class="video-card-body">
+            <div class="video-card-meta">
+              <span>Stage 03 • Hearth Pull</span>
+              <span>4K HD</span>
+            </div>
+            <h3 class="video-card-title">🥐 Hearth Loaf Showcase</h3>
+            <p class="video-card-desc">Blistered caramelized crusts, rustic ears, and golden wheat stalks fresh from morning cooling racks.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -601,8 +640,8 @@
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2025 Breadly Bakery • Free Open-Source Demo Showcase • 100% Copyright-Free Media</div>
-        <div>Photography via Unsplash (Free Royalty-Free License) • Demo Showcase</div>
+        <div>&copy; 2026 Breadly Bakery • Artisanal Bakehouse Showcase</div>
+        <div class="footer-demo-badge">✦ Demo by <strong>Manish</strong></div>
       </div>
     </div>
   </footer>
